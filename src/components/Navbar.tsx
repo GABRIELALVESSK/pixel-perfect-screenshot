@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Waves, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +21,10 @@ const Navbar = () => {
     { href: "#galeria", label: "Galeria" },
     { href: "#contato", label: "Contato" },
   ];
+
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav
@@ -55,8 +60,9 @@ const Navbar = () => {
             ))}
             <Button
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              asChild
             >
-              Agendar Aula
+              <Link to="/login">Agendar Aula</Link>
             </Button>
           </div>
 
@@ -82,15 +88,16 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   className="text-foreground hover:text-ocean font-medium py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={handleLinkClick}
                 >
                   {link.label}
                 </a>
               ))}
               <Button
                 className="bg-ocean text-primary-foreground hover:bg-ocean-dark w-full mt-2"
+                asChild
               >
-                Agendar Aula
+                <Link to="/login" onClick={handleLinkClick}>Agendar Aula</Link>
               </Button>
             </div>
           </div>
