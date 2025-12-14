@@ -68,7 +68,6 @@ const Login = () => {
                 loading_button_label: 'Entrando...',
                 link_text: 'Já tem uma conta? Entre',
                 social_provider_text: 'Entrar com {{provider}}',
-                confirmation_text: 'Verifique seu e-mail para o link de login',
               },
               sign_up: {
                 email_label: 'Seu e-mail',
@@ -90,7 +89,7 @@ const Login = () => {
                 confirmation_text: 'Verifique seu e-mail para o link de redefinição',
               },
               magic_link: {
-                email_label: 'Seu e-mail',
+                email_input_label: 'Seu e-mail',
                 email_input_placeholder: 'exemplo@email.com',
                 button_label: 'Enviar link mágico',
                 loading_button_label: 'Enviando...',
